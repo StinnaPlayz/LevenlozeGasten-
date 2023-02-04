@@ -12,7 +12,7 @@ public class LevelLoaderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(objectToCheck.transform.position.x > 10)
+        if(objectToCheck.transform.position.x > 46)
         {
             LoadNextLevel();    
         }

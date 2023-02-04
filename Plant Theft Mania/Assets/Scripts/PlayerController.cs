@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController2D controller;
     public float runSpeed = 40f;
+    public Animator animator;
 
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
             crouch = false;
         }
     }
+
+    public void OnCrouching (bool isCrouching)
+    {
+        animator.SetBool("Crouching", isCrouching);
+    }
+
     // FixedUpdate is called once per fixed frame (100 fps)
     void FixedUpdate()
     {

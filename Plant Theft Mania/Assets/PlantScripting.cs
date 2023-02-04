@@ -14,10 +14,19 @@ public class PlantScripting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(collision.gameObject.tag == "Player")
+       // if(collision.gameObject.tag == "Player")
+       // {
+       //     Destroy(gameObject);
+        //}
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player")
         {
             Destroy(gameObject);
         }
-
     }
 }

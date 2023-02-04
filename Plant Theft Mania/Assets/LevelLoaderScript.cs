@@ -8,11 +8,12 @@ public class LevelLoaderScript : MonoBehaviour
     public GameObject objectToCheck;
     public Animator transition;
     public float transitionTime = 1f;
+    public float TransitionPosition;
 
     // Update is called once per frame
     void Update()
     {
-        if(objectToCheck.transform.position.x > 46)
+        if(objectToCheck.transform.position.x > TransitionPosition)
         {
             LoadNextLevel();    
         }

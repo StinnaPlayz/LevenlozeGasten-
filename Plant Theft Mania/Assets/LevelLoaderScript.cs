@@ -12,7 +12,7 @@ public class LevelLoaderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(objectToCheck.transform.position.x > 11)
+        if(objectToCheck.transform.position.x > 10)
         {
             LoadNextLevel();    
         }
@@ -20,12 +20,12 @@ public class LevelLoaderScript : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex <= 1) { 
+        if(SceneManager.GetActiveScene().buildIndex == 1) { 
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 2 ));
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
         }
     }
 

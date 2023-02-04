@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlantScripting : MonoBehaviour
 {
     public BoxCollider2D myBoxcollider;
+    public int scoreToAdd = 100;
 
     private GameManager gameManager;
 
@@ -29,7 +30,7 @@ public class PlantScripting : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            gameManager.UpdateScore(100);
+            gameManager.UpdateScore(scoreToAdd);
             Destroy(gameObject);
         }
     }

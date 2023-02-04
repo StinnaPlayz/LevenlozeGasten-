@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController2D controller;
     public float runSpeed = 40f;
     public Animator animator;
+    public bool isFrozen = false;
 
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -22,19 +23,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        if (!isFrozen)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
 
-        if (Input.GetButtonDown("Crouch"))
+            if (Input.GetButtonDown("Crouch"))
+            {
+                crouch = true;
+            } else if (Input.GetButtonUp("Crouch"))
+            {
+                crouch = false;
+            }
+        } else
         {
-            crouch = true;
-        } else if (Input.GetButtonUp("Crouch"))
-        {
-            crouch = false;
+            horizontalMove = 0f;
         }
     }
 

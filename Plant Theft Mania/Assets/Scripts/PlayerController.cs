@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public bool isFrozen = false;
 
-    private float horizontalMove = 0f;
+    public float horizontalMove = 0f;
     private bool jump = false;
     private bool crouch = false;
     private GameManager gameManager;

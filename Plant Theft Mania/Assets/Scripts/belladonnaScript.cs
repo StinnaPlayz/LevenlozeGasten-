@@ -11,8 +11,10 @@ public class belladonnaScript : MonoBehaviour
     public float turnTime = 0.5f;
     public bool canMove = true;
     public GameObject player;
+    public Animator animator;
 
     private PlayerController playerController;
+    private SpriteRenderer spriteRenderer;
 
     private bool gameOver = false;
     private float redLightDuration = 2f;
@@ -24,26 +26,31 @@ public class belladonnaScript : MonoBehaviour
     void Start()
     {
         playerController = player.gameObject.GetComponent<PlayerController>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     private IEnumerator StartGame()
     {
+        
         promptText.text = "Get Ready...";
-        yield return new WaitForSeconds(3);
-        playerController.isFrozen = false;
-
-
+        
         while (!gameOver)
         {
-            
+
             yield return new WaitForSeconds(redLightDuration);
+            playerController.isFrozen = false;
             promptText.text = "Green Light!";
+            animator.SetBool("Paused", false);
+            spriteRenderer.flipX = false;
             canMove = true;
             greenLightDuration = Random.Range(minDuration, maxDuration);
 
             yield return new WaitForSeconds(greenLightDuration);
+            playerController.isFrozen = false;
             promptText.text = "Red Light!";
             yield return new WaitForSeconds(turnTime);
+            animator.SetBool("Paused", true);
+            spriteRenderer.flipX = true;
             canMove = false;
             redLightDuration = Random.Range(minDuration, maxDuration);
         }
@@ -52,7 +59,11 @@ public class belladonnaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!canMove && (playerController.horizontalMove != 0 || !playerController.controller.m_Grounded))
+        {
+            //put player back
+            player.transform.position = new Vector3(-8, -2.5f, 0); 
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

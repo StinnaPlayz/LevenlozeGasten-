@@ -236,6 +236,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &418721684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7165385948497163962, guid: a18c6f0b2bc3f53418bf62d3a56847fb, type: 3}
+  m_PrefabInstance: {fileID: 989713459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +948,8 @@ MonoBehaviour:
   turnTime: 0.5
   canMove: 1
   player: {fileID: 1717938280}
+  animator: {fileID: 1724259061}
+  plantCollectible: {fileID: 418721684}
 --- !u!61 &1724259065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1502,11 +1509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276307790448445883, guid: 9012da0a243367a4d84010db27d5b4c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.710001
+      value: -7.96
       objectReference: {fileID: 0}
     - target: {fileID: 5276307790448445883, guid: 9012da0a243367a4d84010db27d5b4c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.57
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 5276307790448445883, guid: 9012da0a243367a4d84010db27d5b4c5, type: 3}
       propertyPath: m_LocalPosition.z

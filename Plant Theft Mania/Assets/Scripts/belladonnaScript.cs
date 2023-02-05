@@ -12,6 +12,7 @@ public class belladonnaScript : MonoBehaviour
     public bool canMove = true;
     public GameObject player;
     public Animator animator;
+    public Vector3 resetPosition = new Vector3(0,0,0);
 
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
@@ -62,7 +63,7 @@ public class belladonnaScript : MonoBehaviour
         if (!canMove && (playerController.horizontalMove != 0 || !playerController.controller.m_Grounded))
         {
             //put player back
-            player.transform.position = new Vector3(-8, -2.5f, 0); 
+            player.transform.position = resetPosition; 
         }
     }
 

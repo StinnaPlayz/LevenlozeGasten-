@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 40f;
     public Animator animator;
     public bool isFrozen = false;
-    public AudioSource runSound;
+    public AudioSource audioSource;
 
     public float horizontalMove = 0f;
     private bool jump = false;
@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (horizontalMove == 40f || horizontalMove == -40f )
         {
-            playAudio();
+            //playAudio();
         }
         if (!isFrozen)
         {
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     public void playAudio()
     {
-        runSound.Play();
+        audioSource.Play();
     }
 
     // FixedUpdate is called once per fixed frame (100 fps)

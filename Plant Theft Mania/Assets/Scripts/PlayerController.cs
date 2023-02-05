@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameManager.Instance;
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -66,6 +66,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
+    }
+
+    public void StopPlayer()
+    {
+        this.enabled = false;
+        horizontalMove = 0;
+        crouch = false;
         jump = false;
     }
 }

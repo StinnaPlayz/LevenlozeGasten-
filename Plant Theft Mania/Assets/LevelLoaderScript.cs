@@ -17,6 +17,11 @@ public class LevelLoaderScript : MonoBehaviour
         if(objectToCheck.transform.position.x > TransitionPosition)
         {
             LoadNextLevel();    
+
+            if(objectToCheck.TryGetComponent<PlayerController>(out var player))
+            {
+                player.StopPlayer();
+            }
         }
     }
 
@@ -28,6 +33,7 @@ public class LevelLoaderScript : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == AmountOfScenes)
         {
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - (AmountOfScenes -1)));
+            GameManager.Instance.ResetScore();
         }
     }
 

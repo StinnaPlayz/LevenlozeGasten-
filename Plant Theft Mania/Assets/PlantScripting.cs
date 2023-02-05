@@ -12,7 +12,7 @@ public class PlantScripting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame

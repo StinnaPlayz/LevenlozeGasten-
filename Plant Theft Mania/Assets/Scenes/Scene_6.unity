@@ -1040,7 +1040,7 @@ PrefabInstance:
       objectReference: {fileID: 5276307789437619356}
     - target: {fileID: 2957124914869657038, guid: f4d4aec2cfaf67046a229b961f6c20f3, type: 3}
       propertyPath: TransitionPosition
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2957124914869657039, guid: f4d4aec2cfaf67046a229b961f6c20f3, type: 3}
       propertyPath: m_Name

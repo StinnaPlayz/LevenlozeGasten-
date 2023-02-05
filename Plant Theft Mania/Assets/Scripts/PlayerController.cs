@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 40f;
     public Animator animator;
     public bool isFrozen = false;
+    public AudioSource runSound;
 
     public float horizontalMove = 0f;
     private bool jump = false;
@@ -23,6 +24,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (horizontalMove == 40f || horizontalMove == -40f )
+        {
+            playAudio();
+        }
         if (!isFrozen)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -48,6 +53,11 @@ public class PlayerController : MonoBehaviour
     public void OnCrouching (bool isCrouching)
     {
         animator.SetBool("Crouching", isCrouching);
+    }
+
+    public void playAudio()
+    {
+        runSound.Play();
     }
 
     // FixedUpdate is called once per fixed frame (100 fps)

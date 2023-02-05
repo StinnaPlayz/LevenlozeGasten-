@@ -9,6 +9,7 @@ public class LevelLoaderScript : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     public float TransitionPosition;
+    public int AmountOfScenes;
 
     // Update is called once per frame
     void Update()
@@ -21,12 +22,12 @@ public class LevelLoaderScript : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1) { 
+        if(SceneManager.GetActiveScene().buildIndex < AmountOfScenes) { 
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == AmountOfScenes)
         {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - (AmountOfScenes -1)));
         }
     }
 

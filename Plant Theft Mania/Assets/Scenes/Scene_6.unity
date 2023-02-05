@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160573149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.18, y: -2.83, z: -10}
+  m_LocalPosition: {x: -9.8, y: -2.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1095,6 +1095,10 @@ PrefabInstance:
       propertyPath: objectToCheck
       value: 
       objectReference: {fileID: 5276307789437619356}
+    - target: {fileID: 2957124914869657038, guid: f4d4aec2cfaf67046a229b961f6c20f3, type: 3}
+      propertyPath: TransitionPosition
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2957124914869657039, guid: f4d4aec2cfaf67046a229b961f6c20f3, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -1264,7 +1268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444148096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.18, y: -2.83, z: -10}
+  m_LocalPosition: {x: -9.8, y: -2.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14721,7 +14725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276307790448445883, guid: 9012da0a243367a4d84010db27d5b4c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.18
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 5276307790448445883, guid: 9012da0a243367a4d84010db27d5b4c5, type: 3}
       propertyPath: m_LocalPosition.y

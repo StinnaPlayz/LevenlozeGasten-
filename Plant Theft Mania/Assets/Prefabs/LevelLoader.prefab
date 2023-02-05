@@ -134,8 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38952bf7231f9bb4888e91abcbc520bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToCheck: {fileID: 0}
   transition: {fileID: 2077598493287929737}
   transitionTime: 1
+  TransitionPosition: 0
+  AmountOfScenes: 4
 --- !u!1 &5643585480508106363
 GameObject:
   m_ObjectHideFlags: 0

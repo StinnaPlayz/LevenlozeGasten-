@@ -2,13 +2,13 @@ using UnityEngine;
 
 internal static class PersistentObjectsInitializer
 {
-    private static GameObject GetPersistentPrefab()
+    public static GameObject GetPersistentPrefab()
     {
         return Resources.Load<GameObject>("PersistentObjects");
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    private static void OnSubsystemRegistration()
+    public static void OnSubsystemRegistration()
     {
         PersistentObjects.Initialize(GetPersistentPrefab());
     }
